@@ -51,11 +51,11 @@ GameManager.prototype.loadSavedState = function () {
 // Set up the game
 GameManager.prototype.setup = function () {
   $("#main-grid").empty();
-  var cell-width = (500-15)/this.size - 15;
+  var cellwidth = (500-15)/this.size - 15;
   for (var i = 0; i < this.size; i++) {
       var s = '<div class="grid-row">';
       for (var j = 0; j < this.size; j++) {
-          s += '<div class="grid-cell" style="width:'+cell-width+' height:'+cell-width+'"></div>';
+          s += '<div class="grid-cell" style="width:'+cellwidth+' height:'+cellwidth+'"></div>';
       }
       s += '</div>';
       $("#main-grid").append(s);
@@ -82,28 +82,7 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.random();
-    if (value < 0.1) {
-        value = 2;
-    } else if (value < 0.2) {
-        value = 4;
-    } else if (value < 0.3) {
-        value = 8;
-    } else if (value < 0.4) {
-        value = 16;
-    } else if (value < 0.5) {
-        value = 32;
-    } else if (value < 0.6) {
-        value = 64;
-    } else if (value < 0.7) {
-        value = 128;
-    } else if (value < 0.8) {
-        value = 256;
-    } else if (value < 0.9) {
-        value = 512;
-    } else {
-        value = 1024;
-    }
+    var value = Math.random() < 0.9 ? 2 : 4;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
