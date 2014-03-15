@@ -7,6 +7,7 @@ function GameManager(size,
   this.inputManager = new InputManager;
   this.scoreManager = new ScoreManager;
   this.actuator     = new Actuator;
+  this.actuator.size = this.size;
 
   // TODO: take the history size as a get query param.
   this.history      = new BottomlessStack (100);

@@ -75,7 +75,9 @@ HTMLActuator.prototype.addTile = function (tile) {
     classes.push("tile-new");
     this.applyClasses(element, classes);
   }
-
+  var cellwidth = (500-15)/this.size - 15;
+  element.style.width = cellwidth + "px";
+  element.style.height = cellwidth + "px";
   // Put the tile on the board
   this.tileContainer.appendChild(element);
 };
