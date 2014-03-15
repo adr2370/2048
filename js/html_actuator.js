@@ -82,6 +82,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   element.style.lineHeight = (cellwidth + 15) + "px";
   element.style.top = (multiple * tile.y) + "px";
   element.style.left = (multiple * tile.x) + "px";
+  element.style.position = "absolute";
   // Put the tile on the board
   this.tileContainer.appendChild(element);
 };
