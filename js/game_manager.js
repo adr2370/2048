@@ -51,11 +51,13 @@ GameManager.prototype.loadSavedState = function () {
 // Set up the game
 GameManager.prototype.setup = function () {
   $("#main-grid").empty();
-  for (var i = 0; i < this.size; i++) {  
-      $("#main-grid").append('<div class="grid-row">');
+  for (var i = 0; i < this.size; i++) {
+      var s = '<div class="grid-row">';
       for (var j = 0; j < this.size; j++) {
-          $("#main-grid").append('<div class="grid-cell">');
+          s += '<div class="grid-cell"></div>';
       }
+      s += '</div>';
+      $("#main-grid").append(s);
   }
   this.grid         = new Grid(this.size);
   this.score        = 0;
