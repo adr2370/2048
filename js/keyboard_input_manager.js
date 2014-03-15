@@ -99,8 +99,8 @@ KeyboardInputManager.prototype.changeSize = function (event) {
     var e = document.getElementById("size-selector");
     var size = e.options[e.selectedIndex].value;
     this.gameManager.size = size;
+    this.gameManager.actuator.size = size;
     this.gameManager.restart();
-    console.log(this.gameManager.size);
 }
 
 KeyboardInputManager.prototype.restart = function (event) {

@@ -2,7 +2,7 @@
 window.requestAnimationFrame(
   function () {
     new GameManager(
-      6,
+      4,
       KeyboardInputManager,
       HTMLActuator,
       LocalScoreManager,
