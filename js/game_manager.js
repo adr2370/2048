@@ -11,7 +11,7 @@ function GameManager(size,
   // TODO: take the history size as a get query param.
   this.history      = new BottomlessStack (100);
 
-  this.startTiles   = 2;
+  this.startTiles   = 16;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
