@@ -61,7 +61,7 @@ KeyboardInputManager.prototype.listen = function () {
   undo.addEventListener("click", this.undo.bind(this));
   
   var size = document.getElementById("size-selector");
-  size.addEventListener("onchange", this.changeSize.bind(this));
+  size.addEventListener("change", this.changeSize.bind(this));
 
   // Listen to swipe events
   var touchStartClientX, touchStartClientY;
