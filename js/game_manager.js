@@ -55,7 +55,7 @@ GameManager.prototype.setup = function () {
   for (var i = 0; i < this.size; i++) {
       var s = '<div class="grid-row">';
       for (var j = 0; j < this.size; j++) {
-          s += '<div class="grid-cell" style="width:'+cellwidth+'; height:'+cellwidth+';"></div>';
+          s += '<div class="grid-cell" style="width:'+cellwidth+'px; height:'+cellwidth+'px;"></div>';
       }
       s += '</div>';
       $("#main-grid").append(s);
