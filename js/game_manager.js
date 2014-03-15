@@ -5,6 +5,7 @@ function GameManager(size,
                      BottomlessStack) {
   this.size         = size; // Size of the grid
   this.inputManager = new InputManager;
+  this.inputManager.gameManager = this;
   this.scoreManager = new ScoreManager;
   this.actuator     = new Actuator;
   this.actuator.size = this.size;

@@ -59,6 +59,9 @@ KeyboardInputManager.prototype.listen = function () {
 
   var undo = document.getElementById("undo-button");
   undo.addEventListener("click", this.undo.bind(this));
+  
+  var size = document.getElementById("size-selector");
+  size.addEventListener("onchange", this.changeSize.bind(this));
 
   // Listen to swipe events
   var touchStartClientX, touchStartClientY;
@@ -91,6 +94,13 @@ KeyboardInputManager.prototype.listen = function () {
     }
   });
 };
+
+KeyboardInputManager.prototype.changeSize = function (event) {
+    var e = document.getElementById("size-selector");
+    var size = e.options[e.selectedIndex].value;
+    this.gameManager.size = size;
+    this.gameManager.restart();
+}
 
 KeyboardInputManager.prototype.restart = function (event) {
   event.preventDefault();
